@@ -6,8 +6,8 @@
     <title>@ViewData["Title"] - KacakAra | Su Kaçağı Tespiti ve Tesisat Hizmetleri</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="@(ViewData["MetaDescription"] ?? "tekirdag'da profesyonel su kaçağı tespiti, kırmadan kaçak bulma, tıkanıklık açma ve tesisat hizmetleri. 7/24 hizmet, uygun fiyat, garantili çözüm.")">
-    <meta name="keywords" content="@(ViewData["MetaKeywords"] ?? "su kaçağı tespiti, kırmadan kaçak bulma, tıkanıklık açma, pimaş açma, kanal açma, su tesisatı, istanbul su kaçağı, yer tespiti")">
+    <meta name="description" content="@(ViewData["MetaDescription"] ?? "Tekirdağ'da profesyonel su kaçağı tespiti, kırmadan kaçak bulma, tıkanıklık açma ve tesisat hizmetleri. 7/24 hizmet, uygun fiyat, garantili çözüm.")">
+    <meta name="keywords" content="@(ViewData["MetaKeywords"] ?? "su kaçağı tespiti tekirdağ, kırmadan kaçak bulma, tıkanıklık açma tekirdağ, pimaş açma, kanal açma, su tesisatı tekirdağ, yer tespiti")">
     <meta name="author" content="KacakAra">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://kacakara.com@Context.Request.Path" />
@@ -39,51 +39,65 @@
     
     <!-- Structured Data - LocalBusiness Schema -->
     <script type="application/ld+json">
-    {
-        "@@context": "https://schema.org",
-        "@@type": "LocalBusiness",
-        "name": "KacakAra",
-        "image": "https://kacakara.com/images/logo.png",
-        "@@id": "https://kacakara.com",
-        "url": "https://kacakara.com",
-        "telephone": "+90-532-275-7688",
-        "priceRange": "$$",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "",
-            "addressLocality": "İstanbul",
-            "postalCode": "",
-            "addressCountry": "TR"
-        },
-        "geo": {
-            "@@type": "GeoCoordinates",
-            "latitude": 41.0082,
-            "longitude": 28.9784
-        },
-        "openingHoursSpecification": {
-            "@@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            ],
-            "opens": "00:00",
-            "closes": "23:59"
-        },
-        "sameAs": [
-            "https://www.facebook.com/kacakara",
-            "https://www.instagram.com/kacakara"
+     {
+    "@@context": "https://schema.org",
+    "@@type": "LocalBusiness",
+    "name": "KacakAra",
+    "image": "https://kacakara.com/images/logo.png",
+    "@@id": "https://kacakara.com",
+    "url": "https://kacakara.com",
+    "telephone": "+90-532-275-7688",
+    "priceRange": "$$",
+    "address": {
+        "@@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Tekirdağ",
+        "postalCode": "",
+        "addressCountry": "TR"
+    },
+    "geo": {
+        "@@type": "GeoCoordinates",
+        "latitude": 41.0015,
+        "longitude": 27.5117
+    },
+    "openingHoursSpecification": {
+        "@@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
         ],
-        "areaServed": {
+        "opens": "00:00",
+        "closes": "23:59"
+    },
+    "sameAs": [
+        "https://www.facebook.com/kacakara",
+        "https://www.instagram.com/kacakara"
+    ],
+    "areaServed": [
+        {
             "@@type": "City",
             "name": "Tekirdağ"
         },
-        "serviceType": ["Su Kaçağı Tespiti", "Tıkanıklık Açma", "Tesisat Hizmetleri"]
-    }
+        {
+            "@@type": "City",
+            "name": "Çorlu"
+        },
+        {
+            "@@type": "City",
+            "name": "Yeniçiftlik"
+        },
+        {
+            "@@type": "City",
+            "name": "Marmara Ereğlisi"
+        }
+    ],
+    "serviceType": ["Su Kaçağı Tespiti", "Tıkanıklık Açma", "Tesisat Hizmetleri"]
+}
     </script>
 </head>
 <body>

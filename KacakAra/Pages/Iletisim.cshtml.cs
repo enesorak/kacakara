@@ -34,9 +34,8 @@ public class IletisimModel : PageModel
     public void OnGet()
     {
         ViewData["Title"] = "İletişim";
-        ViewData["MetaDescription"] = "KacakAra ile iletişime geçin. Su kaçağı tespiti, tıkanıklık açma ve tesisat hizmetleri için bize ulaşın. 7/24 hizmet, hızlı dönüş.";
-        ViewData["MetaKeywords"] = "iletişim, kacakara iletişim, su kaçağı randevu, tesisat iletişim, Tekirdağ tesisat";
-    }
+        ViewData["MetaDescription"] = "KacakAra ile iletişime geçin. Su kaçağı tespiti, tıkanıklık açma ve tesisat hizmetleri için bize ulaşın. Tekirdağ genelinde 7/24 hizmet, hızlı dönüş.";
+        ViewData["MetaKeywords"] = "iletişim, kacakara iletişim, su kaçağı randevu tekirdağ, tesisat iletişim tekirdağ, tekirdağ tesisat";   }
 
     public async Task<IActionResult> OnPostAsync()
     {
