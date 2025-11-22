@@ -1,0 +1,34 @@
+@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Hata Oluştu";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Hata Oluştu</h1>
+        <p>Bir sorun oluştu</p>
+    </div>
+</section>
+
+<section class="error-section" style="padding: 5rem 0; text-align: center;">
+    <div class="container">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div style="font-size: 5rem; margin-bottom: 1rem;">⚠️</div>
+            <h2>Bir Hata Oluştu</h2>
+            <p>Üzgünüz, bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>
+            
+            @if (Model.ShowRequestId)
+            {
+                <p style="margin-top: 2rem; font-size: 0.875rem; color: #999;">
+                    <strong>İstek ID:</strong> <code>@Model.RequestId</code>
+                </p>
+            }
+
+            <div style="margin-top: 2rem;">
+                <a href="/" class="btn btn-primary btn-lg">Ana Sayfaya Dön</a>
+                <a href="/iletisim" class="btn btn-outline btn-lg">Bize Ulaşın</a>
+            </div>
+        </div>
+    </div>
+</section>

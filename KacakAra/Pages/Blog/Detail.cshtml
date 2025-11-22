@@ -1,0 +1,79 @@
+@page "/blog/{slug}"
+@model KacakAra.Pages.Blog.DetailModel
+@{
+}
+
+@if (Model.Post != null)
+{
+    <article class="blog-detail">
+        <section class="blog-detail-hero">
+            <div class="container">
+                <div class="blog-detail-meta">
+                    <span class="blog-date">@Model.Post.PublishedDate.ToString("dd MMMM yyyy", new System.Globalization.CultureInfo("tr-TR"))</span>
+                    <span class="blog-author">@Model.Post.Author</span>
+                </div>
+                <h1>@Model.Post.Title</h1>
+                <p class="blog-detail-description">@Model.Post.Description</p>
+                <div class="blog-tags">
+                    @foreach (var tag in Model.Post.Tags)
+                    {
+                        <span class="tag">@tag</span>
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-detail-content">
+            <div class="container">
+                <div class="content-wrapper">
+                    @Html.Raw(Model.Post.Content)
+                </div>
+            </div>
+        </section>
+
+        @if (Model.RelatedPosts.Any())
+        {
+            <section class="related-posts">
+                <div class="container">
+                    <h2>İlgili Yazılar</h2>
+                    <div class="blog-grid">
+                        @foreach (var post in Model.RelatedPosts)
+                        {
+                            <article class="blog-card">
+                                <div class="blog-image">
+                                    <img src="@post.ImageUrl" alt="@post.Title" loading="lazy">
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span class="blog-date">@post.PublishedDate.ToString("dd MMMM yyyy", new System.Globalization.CultureInfo("tr-TR"))</span>
+                                    </div>
+                                    <h3>@post.Title</h3>
+                                    <p>@post.Description</p>
+                                    <a href="/blog/@post.Slug" class="blog-link">Devamını Oku →</a>
+                                </div>
+                            </article>
+                        }
+                    </div>
+                </div>
+            </section>
+        }
+    </article>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Profesyonel Yardıma mı İhtiyacınız Var?</h2>
+                <p>Uzman ekibimiz size yardımcı olmak için hazır!</p>
+                <div class="cta-buttons">
+                    <a href="tel:+905322757688" class="btn btn-light btn-lg">
+                        <span class="btn-icon">📞</span> +90 532 275 76 88
+                    </a>
+                    <a href="/iletisim" class="btn btn-outline-light btn-lg">
+                        Teklif Alın
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+}

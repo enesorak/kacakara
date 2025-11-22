@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KacakAra | Su Kaçağı Tespiti ve Tesisat Hizmetleri</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="@(ViewData["MetaDescription"] ?? "tekirdag'da profesyonel su kaçağı tespiti, kırmadan kaçak bulma, tıkanıklık açma ve tesisat hizmetleri. 7/24 hizmet, uygun fiyat, garantili çözüm.")">
+    <meta name="keywords" content="@(ViewData["MetaKeywords"] ?? "su kaçağı tespiti, kırmadan kaçak bulma, tıkanıklık açma, pimaş açma, kanal açma, su tesisatı, istanbul su kaçağı, yer tespiti")">
+    <meta name="author" content="KacakAra">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kacakara.com@Context.Request.Path" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="@ViewData["Title"] - KacakAra">
+    <meta property="og:description" content="@(ViewData["MetaDescription"] ?? "Profesyonel su kaçağı tespiti ve tesisat hizmetleri")">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kacakara.com@Context.Request.Path">
+    <meta property="og:image" content="https://kacakara.com/images/og-image.jpg">
+    <meta property="og:locale" content="tr_TR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@ViewData["Title"] - KacakAra">
+    <meta name="twitter:description" content="@(ViewData["MetaDescription"] ?? "Profesyonel su kaçağı tespiti ve tesisat hizmetleri")">
+    <meta name="twitter:image" content="https://kacakara.com/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data - LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "LocalBusiness",
+        "name": "KacakAra",
+        "image": "https://kacakara.com/images/logo.png",
+        "@@id": "https://kacakara.com",
+        "url": "https://kacakara.com",
+        "telephone": "+90-532-275-7688",
+        "priceRange": "$$",
+        "address": {
+            "@@type": "PostalAddress",
+            "streetAddress": "",
+            "addressLocality": "İstanbul",
+            "postalCode": "",
+            "addressCountry": "TR"
+        },
+        "geo": {
+            "@@type": "GeoCoordinates",
+            "latitude": 41.0082,
+            "longitude": 28.9784
+        },
+        "openingHoursSpecification": {
+            "@@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "sameAs": [
+            "https://www.facebook.com/kacakara",
+            "https://www.instagram.com/kacakara"
+        ],
+        "areaServed": {
+            "@@type": "City",
+            "name": "Tekirdağ"
+        },
+        "serviceType": ["Su Kaçağı Tespiti", "Tıkanıklık Açma", "Tesisat Hizmetleri"]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <span class="brand-text">💧 KacakAra</span>
+                </a>
+                <button class="navbar-toggler" type="button" aria-label="Menüyü Aç/Kapat">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="navbar-menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Index">Ana Sayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Hizmetler">Hizmetlerimiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Hakkimizda">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Blog/Index">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-primary" asp-page="/Iletisim">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KacakAra</h3>
+                    <p>İstanbul'da profesyonel su kaçağı tespiti ve tesisat hizmetleri. Kırmadan, dökmeden garantili çözüm.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul>
+                        <li><a asp-page="/Index">Ana Sayfa</a></li>
+                        <li><a asp-page="/Hizmetler">Hizmetlerimiz</a></li>
+                        <li><a asp-page="/Hakkimizda">Hakkımızda</a></li>
+                        <li><a asp-page="/Blog/Index">Blog</a></li>
+                        <li><a asp-page="/Iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hizmetlerimiz</h4>
+                    <ul>
+                        <li><a href="/hizmetler#su-kacagi">Su Kaçağı Tespiti</a></li>
+                        <li><a href="/hizmetler#tikaniklik">Tıkanıklık Açma</a></li>
+                        <li><a href="/hizmetler#kamera">Kamera ile Kontrol</a></li>
+                        <li><a href="/hizmetler#tesisat">Su Tesisatı</a></li>
+                        <li><a href="/hizmetler#bakim">Bakım ve Tamir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <ul class="contact-info">
+                        <li>📞 <a href="tel:+905322757688">+90 532 275 76 88</a></li>
+                        <li>📧 <a href="mailto:info@kacakara.com">info@kacakara.com</a></li>
+                        <li>📍 İstanbul, Türkiye</li>
+                        <li>🕐 7/24 Hizmet</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; @DateTime.Now.Year KacakAra. Tüm hakları saklıdır.</p>
+                <div class="footer-links">
+                    <a href="/gizlilik-politikasi">Gizlilik Politikası</a>
+                    <a href="/kullanim-kosullari">Kullanım Koşulları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

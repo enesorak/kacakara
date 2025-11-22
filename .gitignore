@@ -1,0 +1,10 @@
+echo "bin/
+obj/
+publish/
+*.db
+*.db-shm
+*.db-wal
+appsettings.Development.json
+.vs/
+.vscode/" > .gitignore
+

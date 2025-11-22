@@ -1,0 +1,130 @@
+@page
+@model IletisimModel
+@{
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>İletişim</h1>
+        <p>Bize ulaşın, size yardımcı olalım</p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
+            <!-- İletişim Bilgileri -->
+            <div class="contact-info-box">
+                <h2>İletişim Bilgilerimiz</h2>
+                <p>7/24 hizmetinizdeyiz. Bize aşağıdaki kanallardan ulaşabilirsiniz.</p>
+
+                <div class="info-items">
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h3>Telefon</h3>
+                            <a href="tel:+905322757688">+90 532 275 76 88</a>
+                            <p class="info-note">7/24 Acil Servis</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <h3>E-Posta</h3>
+                            <a href="mailto:info@kacakara.com">info@kacakara.com</a>
+                            <p class="info-note">24 saat içinde yanıt</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h3>Adres</h3>
+                            <p>Tekirdağ, Türkiye</p>
+                            <p class="info-note">Tüm Tekirdağ'a hizmet</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🕐</div>
+                        <div class="info-content">
+                            <h3>Çalışma Saatleri</h3>
+                            <p>7/24 Hizmet</p>
+                            <p class="info-note">Hafta sonu ve tatil günleri dahil</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-contact">
+                    <h3>Hemen Arayın</h3>
+                    <p>Acil durumlar için 7/24 müdahale ekibimiz hazır</p>
+                    <a href="tel:+905322757688" class="btn btn-primary btn-lg">
+                        <span class="btn-icon">📞</span> +90 532 275 76 88
+                    </a>
+                </div>
+            </div>
+
+            <!-- İletişim Formu -->
+            <div class="contact-form-box">
+                <h2>Mesaj Gönderin</h2>
+                <p>Formu doldurarak bize ulaşabilirsiniz. En kısa sürede size dönüş yapacağız.</p>
+
+                @if (!string.IsNullOrEmpty(Model.Message))
+                {
+                    <div class="alert alert-@Model.MessageType">
+                        @Model.Message
+                    </div>
+                }
+
+                <form method="post" class="contact-form">
+                    <div class="form-group">
+                        <label asp-for="ContactForm.FullName">Ad Soyad *</label>
+                        <input asp-for="ContactForm.FullName" class="form-control" placeholder="Adınız ve Soyadınız" />
+                        <span asp-validation-for="ContactForm.FullName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ContactForm.Phone">Telefon *</label>
+                        <input asp-for="ContactForm.Phone" type="tel" class="form-control" placeholder="05XX XXX XX XX" />
+                        <span asp-validation-for="ContactForm.Phone" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ContactForm.Message">Mesajınız *</label>
+                        <textarea asp-for="ContactForm.Message" class="form-control" rows="6" placeholder="Lütfen durumunuzu detaylı bir şekilde anlatın..."></textarea>
+                        <span asp-validation-for="ContactForm.Message" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        Mesaj Gönder
+                    </button>
+
+                    <p class="form-note">
+                        <small>* işaretli alanlar zorunludur. Bilgileriniz güvenle saklanır ve üçüncü kişilerle paylaşılmaz.</small>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hizmet Alanları -->
+<section class="service-areas-map">
+    <div class="container">
+        <div class="section-header">
+            <h2>Tekirdağ'ın Her Yerindeyiz</h2>
+            <p>Tüm Tekirdağ ilçelerine 7/24 hızlı servis</p>
+        </div>
+        <div class="areas-grid">
+            <div class="area-tag">Çorlu</div>
+            <div class="area-tag">Yeniçiftlik</div>
+            <div class="area-tag">Marmara Ereğlisi</div>
+            <div class="area-tag">ve Tüm Tekirdağ İlçeleri</div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

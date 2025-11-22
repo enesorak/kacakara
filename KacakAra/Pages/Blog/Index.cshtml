@@ -1,0 +1,68 @@
+@page
+@model KacakAra.Pages.Blog.IndexModel
+@{
+}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Blog</h1>
+        <p>Tesisat ve su kaçağı hakkında faydalı bilgiler</p>
+    </div>
+</section>
+
+<section class="blog-list-section">
+    <div class="container">
+        @if (Model.BlogPosts.Any())
+        {
+            <div class="blog-grid">
+                @foreach (var post in Model.BlogPosts)
+                {
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="@post.ImageUrl" alt="@post.Title" loading="lazy">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">@post.PublishedDate.ToString("dd MMMM yyyy", new System.Globalization.CultureInfo("tr-TR"))</span>
+                                <span class="blog-author">@post.Author</span>
+                            </div>
+                            <h2>@post.Title</h2>
+                            <p>@post.Description</p>
+                            <div class="blog-tags">
+                                @foreach (var tag in post.Tags)
+                                {
+                                    <span class="tag">@tag</span>
+                                }
+                            </div>
+                            <a href="/blog/@post.Slug" class="blog-link">Devamını Oku →</a>
+                        </div>
+                    </article>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="no-posts">
+                <p>Henüz blog yazısı bulunmamaktadır.</p>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Tesisat Sorunlarınız İçin Bize Ulaşın</h2>
+            <p>Profesyonel ekibimiz size yardımcı olmak için hazır!</p>
+            <div class="cta-buttons">
+                <a href="tel:+905322757688" class="btn btn-light btn-lg">
+                    <span class="btn-icon">📞</span> Hemen Arayın
+                </a>
+                <a href="/iletisim" class="btn btn-outline-light btn-lg">
+                    İletişime Geçin
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
